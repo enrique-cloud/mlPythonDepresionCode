@@ -1,6 +1,5 @@
-
 # 3
-# # Proyecto Final de la Maestria Por Usuarios
+# Proyecto Final de la Maestria Por Usuarios
 # ### Cuantificación y predicción de posibles casos de depresión en usuarios de twitter utilizando machine learning.
 # ### Enrique Isidoro Vázquez Ramos
 # ### Datos:
