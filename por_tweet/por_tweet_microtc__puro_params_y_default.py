@@ -1,5 +1,6 @@
-# # CÃ³digo Tesis
-# ## Enrique Isidoro VÃ¡zquez Ramos
+#1
+# # Código Tesis
+# ## Enrique Isidoro Vázquez Ramos
 
 from sklearn.model_selection import train_test_split
 import numpy as np
@@ -27,7 +28,7 @@ dataE = pd.DataFrame({'Textos':tweets, 'Klases':klases,'Usuarios':users})
 # Train Test
 XE = dataE
 yE = dataE['Klases']
-XE_data_train, XE_data_test, yE_train, yE_test = train_test_split(XE, yE, test_size=0.3)#, random_state=42, stratify=yE)  
+XE_data_train, XE_data_test, yE_train, yE_test = train_test_split(XE, yE, test_size=0.3) 
 print('se creo el train y el test')
 
 print(XE.groupby(['Klases']).count())
@@ -46,11 +47,11 @@ XE_test = list(XE_data_test['Textos'])
 from microtc.textmodel import TextModel
 
 textmodelEM = TextModel(docs=None, text='text',num_option='delete',usr_option='delete',
-                      url_option='delete',emo_option='group',hashtag_option='delete',
-                      ent_option='none',lc=True,del_dup=True,del_punc=True,del_diac=True,
-                      token_list=[[2, 1], -1, 3, 4],token_min_filter=0,token_max_filter=1,
-                      select_ent=False,select_suff=False, select_conn=False,
-                      weighting='tfidf')
+    url_option='delete',emo_option='group',hashtag_option='delete',
+    ent_option='none',lc=True,del_dup=True,del_punc=True,del_diac=True,
+    token_list=[[2, 1], -1, 3, 4],token_min_filter=0,token_max_filter=1,
+    select_ent=False,select_suff=False, select_conn=False,
+    weighting='tfidf')
 textmodelEM.fit(list(XE_train))
 
 from sklearn.svm import LinearSVC
@@ -75,9 +76,15 @@ from sklearn.metrics import precision_score, recall_score, f1_score, accuracy_sc
 
 def metricas(modelo,y_test,predict):
     print(modelo)
-    print('Precision:',round(precision_score(y_test, predict, average=None)[0],3),'   Macro:',round(precision_score(y_test, predict, average='macro'),3),'   Micro:',round(precision_score(y_test, predict, average='micro'),3))
-    print('Recall:   ',round(recall_score(y_test, predict, average=None)[0],3),'   Macro:',round(recall_score(y_test, predict, average='macro'),3),'   Micro:',round(recall_score(y_test, predict, average='micro'),3))
-    print('F1:       ',round(f1_score(y_test, predict, average=None)[0],3),'   Macro:',round(f1_score(y_test, predict, average='macro'),3),'    Micro:',round(f1_score(y_test, predict, average='micro'),3))
+    print('Precision:',round(precision_score(y_test, predict, average=None)[0],3),
+    'Macro:',round(precision_score(y_test, predict, average='macro'),3),
+    'Micro:',round(precision_score(y_test, predict, average='micro'),3))
+    print('Recall:   ',round(recall_score(y_test, predict, average=None)[0],3),
+    'Macro:',round(recall_score(y_test, predict, average='macro'),3),
+    'Micro:',round(recall_score(y_test, predict, average='micro'),3))
+    print('F1:       ',round(f1_score(y_test, predict, average=None)[0],3),
+    'Macro:',round(f1_score(y_test, predict, average='macro'),3),
+    'Micro:',round(f1_score(y_test, predict, average='micro'),3))
     print('Accuracy: ',round(accuracy_score(y_test, predict),3))
 
 print(metricas('\nmicroTC_Params',yE_test,y_predEM))
