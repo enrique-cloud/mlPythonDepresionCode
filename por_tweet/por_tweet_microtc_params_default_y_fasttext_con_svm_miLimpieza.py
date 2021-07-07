@@ -1,9 +1,4 @@
 # 2
-# !/usr/bin/env python
-# coding: utf-8
-# # CÃ³digo Tesis
-# ## Enrique Isidoro VÃ¡zquez Ramos
-
 import fasttext
 from InferSent.models import InferSent
 import torch

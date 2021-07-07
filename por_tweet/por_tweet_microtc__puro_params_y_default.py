@@ -1,7 +1,4 @@
 # 1
-# # Código Tesis
-# ## Enrique Isidoro Vázquez Ramos
-
 from sklearn.model_selection import train_test_split
 import numpy as np
 import tarfile

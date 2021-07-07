@@ -1,34 +1,5 @@
 # 1
-# !/usr/bin/env python
-# coding: utf-8
-
-# # Proyecto Final de la Maestria Por Usuarios
-# ### Cuantificación y predicción de posibles casos de depresión en usuarios de twitter utilizando machine learning.
-# ### Enrique Isidoro Vázquez Ramos
-# ### Datos:
-# 
-# Cada línea contiene 3 campos: user, klass y tweets.
-# 
-# - Usuarios:
-#     - Hay 317 usuarios (Hay que tener en cuenta que las clases no están balanceadas)
-#         - 92  considerados con depresión
-#         - 225 considerados sin depresion
-#     
-# - Clases:
-#     - klass = 1  considerados con  depresión
-#     - klass = 0 sin depresión
-# 
-# - Tweets:
-# 
-#     - El campo tweets  es una lista y cada elemento es un tweet que contiene todos los datos del tweet posteado: fecha, id, texto, fecha de creacion, geolocalizacion, etc.
-#     - Se juntaran todos los tweets de cada usuario para así tener un tweet único por usuario. 
-
-# ### Código Inicial.
-# ### Datos
-
-
-
-
+# Datos
 import tarfile
 tar = tarfile.open("usuarios_depresion.json.tar.gz")
 tar.extractall()
